@@ -9,11 +9,11 @@ eleventyNavigation:
     title: natas 20 walkthrough
     order: 30
 ---
-# Description
+## Description
 > Username: natas20
 > 
 > URL:      http://natas20.natas.labs.overthewire.org
-## Source Code
+### Source Code
 ```php
 <?php
 
@@ -133,12 +133,12 @@ if (array_key_exists("name", $_SESSION)) {
 ```
 
 ---
-# Progress
-## Observation
+## Progress
+### Observation
 Since session is stored as serialized version, one may give some illegal input to overwrite the admin attribute.
-## Trial
+### Trial
 Try `name\nadmin 1`. It does not work. It seems that `\n` cannot be input as a value of form by browser. Need to write a script.
-## Pwn
+### Pwn
 ```python
 import requests
 from bs4 import BeautifulSoup
@@ -176,14 +176,14 @@ main()
 89OWrTkGmiLZLv12JY4tLj2c4FW0xn56
 
 ---
-# Hint
+## Hint
 
 ---
-# Solving
-## Category
+## Solving
+### Category
 - 
-## Techniques
+### Techniques
 - 
 
-## Tools
+### Tools
 - 

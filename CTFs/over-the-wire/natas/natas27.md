@@ -9,12 +9,12 @@ eleventyNavigation:
     title: natas 27 walkthrough
     order: 30
 ---
-# Description
+## Description
 > Username: natas27
 > 
 > URL:      http://natas27.natas.labs.overthewire.org
 
-## Source Code
+### Source Code
 ```php
 <?php
 
@@ -128,21 +128,21 @@ if (array_key_exists("username", $_REQUEST) and array_key_exists("password", $_R
 ```
 
 ---
-# Progress
-## Observation
+## Progress
+### Observation
 First, I noticed that sql injection might be prevented by `mysqli_real_escape_string`. While digging information, I found a [stackoverflow discussion](https://stackoverflow.com/questions/5741187/sql-injection-that-gets-around-mysql-real-escape-string) which is marvelous. It shows the original answer and why the payload was constructed. Back to the topic, refer to that discussion, it seems to be impossible to bypass `mysqli_real_escape_string`.
 
 The last hope would be `htmlentities`. It seems that it can do nothing.
-## Get a Hint
+### Get a Hint
 From this [natas hint site](https://onestepcode.com/no-solution-natas-guide-overthewire/). It says 
 > The username column is not defined as unique
 
-## Plan
+### Plan
 All we need to do is construct a username that would be `natas28` when it's store into the database. In other words, we need to meet a few conditions
 1. `$usr != trim($usr)`
 2. `mysqli_real_escape_string($link, substr($usr, 0, 64)) == 'natas28'`
 All the special characters we need can be found at [php manual](https://www.php.net/manual/en/mysqli.real-escape-string.php).
-## Pwn
+### Pwn
 ```python
 import requests
 from bs4 import BeautifulSoup
@@ -175,7 +175,7 @@ main()
 ```
 skrwxciAe6Dnb0VfFDzDEHcCzQmv3Gd4
 
-## SQL Trailing Spaces
+### SQL Trailing Spaces
 Although I got the password, that was achieved by chance, not a good plan nor clear understanding.
 
 How mySQL treats trailing spaces plays a significant role in this problem. By [the document](https://dev.mysql.com/doc/refman/8.4/en/charset-binary-collations.html#charset-binary-collations-trailing-space-comparisons) and my search,
@@ -187,14 +187,14 @@ Therefore, trailing spaces would be ignored.
 ![[mysql_trailing_spaces_comparison.png]]
 
 ---
-# Hint
+## Hint
 
 ---
-# Solving
-## Category
+## Solving
+### Category
 - 
-## Techniques
+### Techniques
 - 
 
-## Tools
+### Tools
 - 

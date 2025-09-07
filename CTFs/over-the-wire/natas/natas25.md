@@ -9,12 +9,12 @@ eleventyNavigation:
     title: natas 25 walkthrough
     order: 30
 ---
-# Description
+## Description
 > Username: natas25
 > 
 > URL:      http://natas25.natas.labs.overthewire.org
 
-## Source Code
+### Source Code
 ```php
 <?php
 // cheers and <3 to malvina
@@ -84,25 +84,25 @@ echo "<div align=\"right\"><h6>$__FOOTER</h6><div>";
 ```
 
 ---
-# Progress
-## Observation
+## Progress
+### Observation
 User can control the value of `$_SERVER['HTTP_USER_AGENT']` and `$_REQUEST`.
 http://natas25.natas.labs.overthewire.org/language/en properly prints the php code.
 When accessing http://natas25.natas.labs.overthewire.org/logs/natas25_tpigqjsqu34iqeg3rcavtq3d2h.log, I got an internal server error. Accessing http://natas25.natas.labs.overthewire.org/natas/logs/natas25_refg9pem9ia3qh86tf2gd2gu2h.log gave us 404.
 The `include` function will print all the content in the included file, and treating the content in php code block as a part of code.
-## Plan
+### Plan
 Since the service did not fully block the relative file input. It just makes `../` be empty. Therefore, we can construct `....//` to make the processed string be `../`. One cannot construct a string containing `natas_passwd`, since the service will terminate. 
 Use `$_SERVER['HTTP_USER_AGENT']` to access the `natas_passwd`, and use `$_REQUEST` to access the log file.
-## Gathering Info
-### Structure of Directory
+### Gathering Info
+#### Structure of Directory
 Guess the language directory is under `/var/www/natas/natas25/natas25`. 
 Query `http://natas25.natas.labs.overthewire.org/?lang=....//logs/natas25_refg9pem9ia3qh86tf2gd2gu2h.log` give us
 
 > [13.02.2024 04::04:40] Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 "Directory traversal attempt! fixing request."
 
 Great! It seems the plan would work.
-## Pwn
-### First Try
+### Pwn
+#### First Try
 ```python
 import requests
 from bs4 import BeautifulSoup
@@ -136,7 +136,7 @@ Get
 
 User agent injection failed.
 Try to send the second request with the same header. Succeeded! 
-### Final
+#### Final
 script
 ```python
 import requests
@@ -173,14 +173,14 @@ payload (`natas_pwn.php`)
 8A506rfIAXbKKk68yJeuTuRq4UfcK70k
 
 ---
-# Hint
+## Hint
 
 ---
-# Solving
-## Category
+## Solving
+### Category
 - 
-## Techniques
+### Techniques
 - 
 
-## Tools
+### Tools
 - 

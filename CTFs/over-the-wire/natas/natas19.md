@@ -9,21 +9,21 @@ eleventyNavigation:
     title: natas 19 walkthrough
     order: 30
 ---
-# Description
+## Description
 > Username: natas19
 > 
 > URL:      http://natas19.natas.labs.overthewire.org
 
 ---
-# Progress
-## Observation
+## Progress
+### Observation
 Session ID are not sequential, but they seem similar.
-## Analyze
+### Analyze
 Get 500 session IDs and analyze them.
 It seems the session IDs always start with 3 and end with 2d226122. After strip those things. Session IDs can be divided into three parts: `[\d]`, `[3\d]`,`[3\d]`. Therefore, try them.
 However, from the script, we cannot crack the session ID. After some tries, it seems that the session ID contains username in it, just right after the 2d22 part. `a` was encoded as `61`. `b` was encoded as `62`, and so on. It seems to be ascii in hex.
 Therefore, we can guess there are three digits of number, and followed by `-<username>`.
-## Script
+### Script
 ```python
 import requests
 from bs4 import BeautifulSoup
@@ -95,14 +95,14 @@ main()
 guVaZ3ET35LbgbFMoaN5tFcYT1jEP7UH
 
 ---
-# Hint
+## Hint
 
 ---
-# Solving
-## Category
+## Solving
+### Category
 - 
-## Techniques
+### Techniques
 - 
 
-## Tools
+### Tools
 - 

@@ -9,7 +9,7 @@ eleventyNavigation:
     title: narnia 1 walkthrough
     order: 30
 ---
-# Description
+## Description
 > correct variable value via writing to another variable
 
 connect
@@ -24,11 +24,11 @@ Give me something to execute at the env-variable EGG
 ```
 
 ---
-# Hint
+## Hint
 
 ---
 
-# Progress
+## Progress
 Steps
 1. set shellcode as the value of env-variable EGG
 ```bash

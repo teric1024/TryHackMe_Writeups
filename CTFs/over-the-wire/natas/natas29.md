@@ -9,25 +9,25 @@ eleventyNavigation:
     title: natas 29 walkthrough
     order: 30
 ---
-# Description
+## Description
 > Username: natas29
 > 
 > URL:      http://natas29.natas.labs.overthewire.org
 
 
 ---
-# Progress
-## Observation
+## Progress
+### Observation
 
 ---
-# Hint
+## Hint
 
 ---
-# Solving
-## Category
+## Solving
+### Category
 - 
-## Techniques
+### Techniques
 - 
 
-## Tools
+### Tools
 - 

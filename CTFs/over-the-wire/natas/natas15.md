@@ -9,12 +9,12 @@ eleventyNavigation:
     title: natas 15 walkthrough
     order: 30
 ---
-# Description
+## Description
 >   Username: natas15
 > 
 >    URL:      http://natas15.natas.labs.overthewire.org
   
-## Source Code 
+### Source Code 
 ```php
 <?php
 
@@ -51,16 +51,16 @@ if(array_key_exists("username", $_REQUEST)) {
 ```
 
 ---
-# Progress
-## Observation
+## Progress
+### Observation
 It is an easy [[sql injection MOC]], but that seems useless.
 Username : `natas16` -> This user exists.
 The goal is retrieving the password of natas16. We cannot make the server print the password. The only thing we can do is check if the query returns anything. Therefore, we can input the password and check if the password is correct.
-## Payload
+### Payload
 Check password `natas16" and password = "pw" -- `
 Find password
 
-## Search by Exhaust
+### Search by Exhaust
 ```python
 import requests
 from bs4 import BeautifulSoup
@@ -99,14 +99,14 @@ main()
 TRD7iZrd5gATjj9PkPEuaOlfEjHqj32V
 
 ---
-# Hint
+## Hint
 
 ---
-# Solving
-## Category
+## Solving
+### Category
 - [[sql injection MOC]]
-## Techniques
+### Techniques
 - 
 
-## Tools
+### Tools
 - 

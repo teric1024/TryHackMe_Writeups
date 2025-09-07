@@ -9,11 +9,11 @@ eleventyNavigation:
     title: natas 11 walkthrough
     order: 30
 ---
-# Description
+## Description
 >   Username: natas11
 > 
 >   URL:      http://natas11.natas.labs.overthewire.org
-## Source Code
+### Source Code
 ```php
 <?
 
@@ -78,20 +78,20 @@ if($data["showpassword"] == "yes") {
 ?>
 ```
 
-## Cookie
+### Cookie
 Name : data 
 Value : HmYkBwozJw4WNyAAFyB1VUcqOE1JZjUIBis7ABdmbU1GIjEJAyIxTRg=
 Domain : natas11.natas.labs.overthewire.org
 
 
 ---
-# Progress
-## Observation
+## Progress
+### Observation
 default data --(json encode, `xor_encrypt`, base64 encode)--> cookie
 
 Therefore, we know that `json_encoded(data) xor key = base64_decode(cookie)`.
 From the property of xor $a \oplus b = c \leftrightarrow a \oplus c = b$, we can get the key by  `key = json_encoded(data) xor base64_decode(cookie)`.
-## Get the Key
+### Get the Key
 Use the following code to get the key.
 ```php
 $defaultdata = array( "showpassword"=>"no", "bgcolor"=>"#ffffff");
@@ -112,7 +112,7 @@ $natasKey = xors(base64_decode($natasCookie),json_encode($defaultdata));
 echo $natasKey;
 ```
 Key = eDWoeDWoeDWoeDWoeDWoeDWoeDWoeDWoeDWoeDWoe
-## Make Payload
+### Make Payload
 The payload should contain two keys, `showpassword` and `bgcolor`.
 ```php
 $payload = array( "showpassword"=>"yes", "bgcolor"=>"#fffaaf");
@@ -122,19 +122,19 @@ echo $myCookie;
 echo "\n";
 ```
 
-## Get the Password
+### Get the Password
 When using key = eDWoeDWoeDWoeDWoeDWoeDWoeDWoeDWoeDWoeDWoe, it failed.
 Guess the key should be `eDWo`. Then, it works.
 
 ---
-# Hint
+## Hint
 
 ---
-# Solving
+## Solving
 
 
-## Techniques
+### Techniques
 - [[xor]]
 
-## Tools
+### Tools
 - 

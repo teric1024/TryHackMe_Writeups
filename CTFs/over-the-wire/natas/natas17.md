@@ -9,11 +9,11 @@ eleventyNavigation:
     title: natas 17 walkthrough
     order: 30
 ---
-# Description
+## Description
 > Username: natas17
 > 
 > URL:      http://natas17.natas.labs.overthewire.org
-## Source Code
+### Source Code
 ```php
 <?php
 
@@ -49,14 +49,14 @@ if (array_key_exists("username", $_REQUEST)) {
 ```
 
 ---
-# Progress
-## Observation
+## Progress
+### Observation
 Seems we cannot get anything different with different inputs. Try to see if it is true. It seems like that.
 However, there's a line which output the query. Therefore, use the url `http://natas17.natas.labs.overthewire.org/?debug=true&username=a`.
-## Trial
+### Trial
 From this [article](https://security.stackexchange.com/questions/109415/php-code-injection-using-get-and-echo), it seems we can only achieve [[XSS]] via the only echo line. 
 We cannot get anything different by the output. Time may be a way to distinguish the difference. [[Time Delay SQL Injection]]
-## Script
+### Script
 ```python
 import requests
 from bs4 import BeautifulSoup
@@ -101,14 +101,14 @@ One may want to check again when get a part of the password.
 Still can find the password : 8NEDUUxg8kFgPV84uLwvZkGn6okJQ6aq
 
 ---
-# Hint
+## Hint
 
 ---
-# Solving
-## Category
+## Solving
+### Category
 - 
-## Techniques
+### Techniques
 - [[sql injection MOC]]
 
-## Tools
+### Tools
 - 

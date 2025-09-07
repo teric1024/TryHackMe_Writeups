@@ -9,12 +9,12 @@ eleventyNavigation:
     title: natas 26 walkthrough
     order: 30
 ---
-# Description
+## Description
 > Username: natas26
 > 
 > URL:      http://natas26.natas.labs.overthewire.org
 
-## Source Code
+### Source Code
 ```php
 <?php
 // sry, this is ugly as hell.
@@ -155,14 +155,14 @@ if (
 ```
 
 ---
-# Progress
-## Observation
+## Progress
+### Observation
 Obviously, we can inject from `$_GET` and `$_COOKIE`. All the operations using `$_GET` samely uses `$_COOKIE`. Therefore, the attack would be undergone with cookie. 
 `imageline` and `unserialize` directly use the value of user provided cookie. From [php manual](https://php.net/manual/en/function.imageline.php), I could not get any vulnerabilities. However, there are lots of warnings in the unserialize page. That's it.
-## Plan
+### Plan
 By google, I found an [article about unserialize](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Insecure%20Deserialization/PHP.md). Set log file as the png file path or anything, and inject php code as exit message.
 
-## Pwn
+### Pwn
 ```php
 <?php
 class Logger
@@ -209,19 +209,19 @@ main()
 Accessing http://natas26.natas.labs.overthewire.org/img/sss.php will get PSO8xysPi00WKIiZZ6s6PtRmFy9cbxj3
 
 ---
-# Hint
+## Hint
 
 ---
-# Solving
-## Noting
+## Solving
+### Noting
 - Do not use python to generate the serialized data. It only offers pain and error. 
 - Use absolute path will give you higher chance to pwn.
-## Category
+### Category
 - 
-## Techniques
+### Techniques
 - 
-## Reference
+### Reference
 - https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Insecure%20Deserialization/PHP.md
 - 
-## Tools
+### Tools
 - 

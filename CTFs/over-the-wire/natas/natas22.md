@@ -9,12 +9,12 @@ eleventyNavigation:
     title: natas 22 walkthrough
     order: 30
 ---
-# Description
+## Description
 > Username: natas22
 > 
 > URL:      http://natas22.natas.labs.overthewire.org
 
-## Source Code
+### Source Code
 ```php
 <?php
 session_start();
@@ -37,10 +37,10 @@ if (array_key_exists("revelio", $_GET)) {
 ```
 
 ---
-# Progress
-## Observation
+## Progress
+### Observation
 `revelio` is needed to be added into query while we send a get request. After that, one should get the content below.
-## Trial
+### Trial
 ```python
 import requests
 from bs4 import BeautifulSoup
@@ -78,13 +78,13 @@ response = requests.get(main_url+payload, auth=authentication, allow_redirects=F
 ```
 
 ---
-# Hint
+## Hint
 
 ---
-# Solving
-## Category
+## Solving
+### Category
 - 
-## Techniques
+### Techniques
 - 
-## Tools
+### Tools
 - 

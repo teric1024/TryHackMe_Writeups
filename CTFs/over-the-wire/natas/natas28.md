@@ -9,16 +9,16 @@ eleventyNavigation:
     title: natas 28 walkthrough
     order: 30
 ---
-# Description
+## Description
 > Username: natas28
 > 
 > URL:      http://natas28.natas.labs.overthewire.org
 
 
 ---
-# Progress
-## Observation
-### Payload
+## Progress
+### Observation
+#### Payload
 After pressing search, the url turns into `search.php` with query. Therefore, directly check endpoint `search.php` page. Nothing but only `mep` three characters.
 
 Let us play with payload. Query with nothing offers 
@@ -72,7 +72,7 @@ Length
 - suffix : (16-(12-10))+16 = 30
 
 Since it seems to be ECB, [[padding oracle attack]] might be useless here.
-## Crack Suffix (Meaningless)
+### Crack Suffix (Meaningless)
 ```python
 import requests
 from requests.auth import HTTPBasicAuth
@@ -123,7 +123,7 @@ if __name__ == "__main__":
 ```
 password : %
 failed to find the suffix.
-## Special Characters
+### Special Characters
 However, try to add special (escape) character into payloads.
 ```python
 def compare_queries():
@@ -139,7 +139,7 @@ The differences between them are all in the fourth block. That means the plainte
 Therefore, I guess the process is
 getting input from user → escape characters → ECB → request with encrypted payload → decrypt the payload → sql
 
-## Plan
+### Plan
 If the process is as I guessed, one can perform sql attack with malicious enrypted payload, that is, not escaped characters.
 ```python
 if __name__ == "__main__":
@@ -155,21 +155,21 @@ if __name__ == "__main__":
 Succeed!
 We need to get the info about users table. Therefore, we need to use [[union attack]].
 ```python
-"' OR 1=1 ORDER BY 1-- " # determine the column of the original sql
-"' UNION SELECT username FROM users-- " # get all the users, found only one
-"' UNION SELECT password FROM users-- " # retrieve the password of the only user
+"' OR 1=1 ORDER BY 1-- " ## determine the column of the original sql
+"' UNION SELECT username FROM users-- " ## get all the users, found only one
+"' UNION SELECT password FROM users-- " ## retrieve the password of the only user
 ```
 Finally, we get pc0w0Vo0KpTHcEsgMhXu2EwUzyYemPno
 
 ---
-# Hint
+## Hint
 
 ---
-# Solving
-## Category
+## Solving
+### Category
 - 
-## Techniques
+### Techniques
 - [[union attack]]
 
-## Tools
+### Tools
 - 

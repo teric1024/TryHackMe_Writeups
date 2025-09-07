@@ -9,12 +9,12 @@ eleventyNavigation:
     title: natas 23 walkthrough
     order: 30
 ---
-# Description
+## Description
 > Username: natas23
 > 
 > URL:      http://natas23.natas.labs.overthewire.org
 
-## Source Code
+### Source Code
 ```php
 <?php
 if (array_key_exists("passwd", $_REQUEST)) {
@@ -29,23 +29,23 @@ if (array_key_exists("passwd", $_REQUEST)) {
 ```
 
 ---
-# Progress
-## Observation
+## Progress
+### Observation
 I have no idea why the password is compared to a number, but the only thing we need to do is pas the check.
 This [php wiki](https://wiki.php.net/rfc/string_to_number_comparison#precision) explained how to compare string to integer.
-## Payload
+### Payload
 `30iloveyou`
 0xzF30T9Av8lgXhW7slhFCIsVKAPyl2r
 
 ---
-# Hint
+## Hint
 
 ---
-# Solving
-## Category
+## Solving
+### Category
 - 
-## Techniques
+### Techniques
 - 
 
-## Tools
+### Tools
 - 

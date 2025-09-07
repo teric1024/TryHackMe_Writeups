@@ -9,11 +9,11 @@ eleventyNavigation:
     title: natas 18 walkthrough
     order: 30
 ---
-# Description
+## Description
 > Username: natas18
 > 
 > URL:      http://natas18.natas.labs.overthewire.org
-## Source Code
+### Source Code
 ```php
 <?php
 
@@ -97,10 +97,10 @@ if ($showform) {
 ```
 
 ---
-# Progress
-## Observation
+## Progress
+### Observation
 Using session ID to distinguish user identity. We need to pass `print_credentials`. Session ID seems to be an integer and inbetween $[1,640]$. Therefore, try all the session ID.
-## Pwn
+### Pwn
 ```python
 import requests
 from bs4 import BeautifulSoup
@@ -132,14 +132,14 @@ main()
 8LMJEhKFbMKIL2mxQKjv0aEDdk7zpT0s
 
 ---
-# Hint
+## Hint
 
 ---
-# Solving
-## Category
+## Solving
+### Category
 - 
-## Techniques
+### Techniques
 - 
 
-## Tools
+### Tools
 - 

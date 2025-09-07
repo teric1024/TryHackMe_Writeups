@@ -9,11 +9,11 @@ eleventyNavigation:
     title: natas 16 walkthrough
     order: 30
 ---
-# Description
+## Description
 > Username: natas16
 > 
 > URL:      http://natas16.natas.labs.overthewire.org
-## Source Code
+### Source Code
 ```php
 <?
 $key = "";
@@ -33,12 +33,12 @@ if($key != "") {
 ```
 
 ---
-# Progress
-## Observation
+## Progress
+### Observation
 Some characters are filtered. Our payload should contain `/etc/natas_webpass/natas17` in order to interact with the password.
-## Payload
+### Payload
 QQ
-## Program
+### Program
 ```python
 import requests
 from bs4 import BeautifulSoup
@@ -77,13 +77,13 @@ main()
 XkEuChE0SbnKBvH1RU7ksIb9uuLmI7sd
 
 ---
-# Hint
+## Hint
 
 ---
-# Solving
-## Category
+## Solving
+### Category
 - 
-## Techniques
+### Techniques
 - 
-## Tools
+### Tools
 - [[grep]]

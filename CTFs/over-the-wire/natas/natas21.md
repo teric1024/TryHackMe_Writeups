@@ -9,12 +9,12 @@ eleventyNavigation:
     title: natas 21 walkthrough
     order: 30
 ---
-# Description
+## Description
 > Username: natas21
 > 
 > URL:      http://natas21.natas.labs.overthewire.org
 
-## Source Code
+### Source Code
 http://natas21.natas.labs.overthewire.org/index.php : 
 ```php
 <?php
@@ -75,12 +75,12 @@ $example = "<div style='$style'>Hello world!</div>";
 ```
 
 ---
-# Progress
-## Observation
+## Progress
+### Observation
 The experimenter page is definitely vulnerable. However, we need to find a way to make it use to crack the main page.
-## Trial
+### Trial
 If those two pages share session data. One can inject content into the session via the experimenter page, and using the session ID to retrieve the password from the main page.
-## Script
+### Script
 ```python
 import requests
 from bs4 import BeautifulSoup
@@ -119,14 +119,14 @@ main()
 91awVM9oDiUGm33JdzM7RVLBS8bz9n0s
 
 ---
-# Hint
+## Hint
 
 ---
-# Solving
-## Category
+## Solving
+### Category
 - 
-## Techniques
+### Techniques
 - 
 
-## Tools
+### Tools
 - 
